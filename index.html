@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>FW26/27 — Erkek Ayakkabı Trend Sunumu</title>
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body {
+      background: #121212;
+      color: #f5f5f7;
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+      line-height: 1.6;
+    }
+    header {
+      padding: 3.5rem 1.5rem 2rem;
+      text-align: center;
+      background: linear-gradient(180deg, #1c1c1c 0%, #121212 100%);
+      border-bottom: 1px solid #262626;
+    }
+    .badge {
+      display: inline-block;
+      padding: 0.3rem 0.8rem;
+      border: 1px solid #e8b975;
+      border-radius: 20px;
+      color: #e8b975;
+      font-size: 0.75rem;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      margin-bottom: 0.8rem;
+    }
+    h1 {
+      font-family: "Georgia", serif;
+      font-size: 2.1rem;
+      font-weight: 400;
+      letter-spacing: 1.5px;
+      color: #ffffff;
+      margin-bottom: 0.4rem;
+    }
+    p.subtitle {
+      color: #9e9ea7;
+      font-size: 0.95rem;
+      max-width: 540px;
+      margin: 0 auto;
+    }
+    .container {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 2.5rem 1.5rem 5rem;
+    }
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+      gap: 1.5rem;
+    }
+    .card {
+      background: #1b1b1b;
+      border-radius: 12px;
+      overflow: hidden;
+      border: 1px solid #282828;
+      display: flex;
+      flex-direction: column;
+      transition: transform 0.2s ease, border-color 0.2s ease;
+    }
+    .card:hover {
+      transform: translateY(-4px);
+      border-color: #e8b975;
+    }
+    .card-info {
+      padding: 1.2rem;
+    }
+    .card-title {
+      font-size: 1rem;
+      font-weight: 600;
+      color: #f5f5f7;
+    }
+    .card-desc {
+      font-size: 0.82rem;
+      color: #8e8e93;
+      margin-top: 0.3rem;
+    }
+    footer {
+      text-align: center;
+      padding: 2rem;
+      color: #666;
+      font-size: 0.8rem;
+      border-top: 1px solid #222;
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <div class="badge">Koleksiyon Sunumu</div>
+    <h1>FW26/27 FOOTWEAR</h1>
+    <p class="subtitle">Doku, form ve modern silüetlerin birleşimiyle hazırlanan erkek ayakkabı konsept seçkisi.</p>
+  </header>
+
+  <div class="container">
+    <div class="grid" id="gallery"></div>
+  </div>
+
+  <footer>
+    &copy; FW26/27 Men's Footwear Trend Presentation
+  </footer>
+
+  <script>
+    const collection = [
+      { title: "Sculptural Form 01", desc: "Doğal doku ve dekonstrüktif silüet" },
+      { title: "Material Detail 02", desc: "Süet ve deri panel kombinasyonu" },
+      { title: "Retail Packaging 03", desc: "Minimalist kutulama ve sunum tasarımı" },
+      { title: "Sole Architecture 04", desc: "Hacimli taban yapısı ve hafif materyal" },
+      { title: "Craftsmanship 05", desc: "Geleneksel işçilik detayları" },
+      { title: "Exploded Sculpture 06", desc: "Katman ayrıştırma ve prototip çalışması" },
+      { title: "Studio Lighting 07", desc: "Doğal ışık altında form incelemesi" },
+      { title: "Silhouette 08", desc: "Geniş paça ve relaxed kesim uyumu" },
+      { title: "Texture Analysis 09", desc: "Toprak tonları ve doğal lifler" },
+      { title: "Final Polish 10", desc: "Koleksiyonun son üretim hali" }
+    ];
+
+    const gallery = document.getElementById('gallery');
+    collection.forEach(item => {
+      const card = document.createElement('div');
+      card.className = 'card';
+      card.innerHTML = `
+        <div class="card-info">
+          <div class="card-title">${item.title}</div>
+          <div class="card-desc">${item.desc}</div>
+        </div>
+      `;
+      gallery.appendChild(card);
+    });
+  </script>
+</body>
+</html>
